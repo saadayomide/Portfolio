@@ -10,9 +10,9 @@ const nextConfig = {
     unoptimized: true,
   },
   
-  // Uncomment and update these if deploying to a subpath (e.g., username.github.io/portfolio)
-  // basePath: '/portfolio',
-  // assetPrefix: '/portfolio/',
+  // Required for GitHub Pages deployment to username.github.io/Portfolio
+  basePath: '/Portfolio',
+  assetPrefix: '/Portfolio/',
   
   // Trailing slashes for better GitHub Pages compatibility
   trailingSlash: true,
