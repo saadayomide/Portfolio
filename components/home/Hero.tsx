@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Download, Mail, MapPin, Shield, GraduationCap, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { ConsoleWidget } from "./ConsoleWidget";
+
+// Base path for GitHub Pages deployment
+const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
 
 const badges = [
   { icon: MapPin, label: "Madrid, Spain", color: "text-blue-400" },
@@ -35,13 +37,12 @@ export function Hero() {
           >
             <div className="relative">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg shadow-accent/10">
-                <Image
-                  src="/profile.jpg"
+                <img
+                  src={`${basePath}/profile.jpg`}
                   alt="Saad Ayomide Olowolayemo"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
-                  priority
                 />
               </div>
               <span className="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full border-2 border-surface-0 flex items-center justify-center">
