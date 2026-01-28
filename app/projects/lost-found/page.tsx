@@ -194,8 +194,8 @@ const projectData = {
   tags: ["Java", "JavaFX", "SQLite", "JUnit", "MVC"],
   links: {
     github: "https://github.com/saadayomide/lost-found",
-    demo: null,
-    readme: null,
+    demo: undefined,
+    readme: undefined,
   },
 };
 

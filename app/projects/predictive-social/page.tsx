@@ -195,8 +195,8 @@ const projectData = {
   tags: ["Python", "ML", "RAG", "Embeddings", "FAISS", "NLP"],
   links: {
     github: "https://github.com/saadayomide/predictive-social",
-    demo: null,
-    readme: null,
+    demo: undefined,
+    readme: undefined,
   },
 };
 

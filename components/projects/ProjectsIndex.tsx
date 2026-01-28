@@ -87,22 +87,22 @@ export function ProjectsIndex() {
         <div className="flex items-center gap-2 text-sm text-slate-500 mr-2">
           <Filter className="w-4 h-4" />
         </div>
-        {filters.map((filter) => (
+          {filters.map((filter) => (
           <motion.button
-            key={filter}
+              key={filter}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => setActiveFilter(filter)}
-            className={cn(
+              onClick={() => setActiveFilter(filter)}
+              className={cn(
               "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-              activeFilter === filter
+                activeFilter === filter
                 ? "bg-accent/15 text-accent border border-accent/30"
                 : "bg-white/[0.03] border border-white/[0.06] text-slate-400 hover:text-white hover:bg-white/[0.06]"
-            )}
-          >
-            {filter}
+              )}
+            >
+              {filter}
           </motion.button>
-        ))}
+          ))}
       </motion.div>
 
       {/* Project Grid */}
@@ -120,8 +120,8 @@ export function ProjectsIndex() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: index * 0.05, duration: 0.3 }}
             >
-              <Link
-                href={project.href}
+          <Link
+            href={project.href}
                 className="group relative block h-full rounded-2xl overflow-hidden"
               >
                 {/* Background */}
@@ -136,13 +136,13 @@ export function ProjectsIndex() {
                   {/* Header */}
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-xl font-heading font-semibold group-hover:text-white transition-colors">
-                      {project.title}
-                    </h3>
+                {project.title}
+              </h3>
                     <span className="flex items-center gap-1 text-xs text-slate-500 flex-shrink-0">
                       <Calendar className="w-3 h-3" />
                       {project.date}
                     </span>
-                  </div>
+            </div>
 
                   {/* Description */}
                   <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
@@ -160,27 +160,27 @@ export function ProjectsIndex() {
                   {/* Stack */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
+                <span
+                  key={tech}
                         className="px-2 py-1 rounded text-xs text-slate-500 bg-white/[0.03] border border-white/[0.04]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
 
                   {/* CTA */}
                   <div 
                     className="flex items-center gap-2 pt-2 text-sm font-medium"
                     style={{ color: project.accent }}
                   >
-                    Case Study
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Case Study
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
-              </Link>
+            </div>
+          </Link>
             </motion.div>
-          ))}
+        ))}
         </AnimatePresence>
       </motion.div>
 
@@ -191,7 +191,7 @@ export function ProjectsIndex() {
           animate={{ opacity: 1 }}
           className="text-center py-16"
         >
-          <p className="text-slate-500">No projects found for "{activeFilter}"</p>
+          <p className="text-slate-500">No projects found for &quot;{activeFilter}&quot;</p>
           <button
             onClick={() => setActiveFilter("All")}
             className="text-accent hover:underline mt-2 text-sm"

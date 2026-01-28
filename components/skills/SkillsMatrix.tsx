@@ -118,7 +118,7 @@ export function SkillsMatrix() {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-heading font-bold">Skills Matrix</h2>
-        <p className="text-slate-400 mt-2">Click any skill to see where I've applied it</p>
+        <p className="text-slate-400 mt-2">Click any skill to see where I&apos;ve applied it</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -137,11 +137,11 @@ export function SkillsMatrix() {
                 style={{ backgroundColor: category.color }}
               />
               <h3 className="font-heading font-semibold">{category.name}</h3>
-            </div>
+                  </div>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <motion.button
-                  key={skill.name}
+                          key={skill.name}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedSkill(selectedSkill === skill.name ? null : skill.name)}
@@ -158,14 +158,14 @@ export function SkillsMatrix() {
                     borderColor: `${category.color}40`,
                     color: category.color
                   } : {}}
-                >
-                  {skill.name}
+                        >
+                          {skill.name}
                   {skill.level === "strong" && skill.deployed && (
                     <span className="ml-1.5 text-[10px] opacity-50">●</span>
                   )}
                 </motion.button>
-              ))}
-            </div>
+                      ))}
+                  </div>
           </motion.div>
         ))}
       </div>
@@ -187,31 +187,31 @@ export function SkillsMatrix() {
               className="bg-surface-1 border border-white/[0.08] rounded-2xl p-6 max-w-md w-full space-y-5"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-heading font-semibold">{selectedSkill}</h3>
-                <button
-                  onClick={() => setSelectedSkill(null)}
+              <button
+                onClick={() => setSelectedSkill(null)}
                   className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors"
-                >
+              >
                   <X className="w-4 h-4" />
-                </button>
+              </button>
               </div>
               
-              <div>
+            <div>
                 <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Used in</p>
-                <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                   {detail.projects.map((project) => (
                     <Link
                       key={project.name}
                       href={project.href}
                       className="group flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-sm hover:bg-accent/15 transition-colors"
-                    >
+                  >
                       {project.name}
                       <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
                     </Link>
-                  ))}
-                </div>
+                ))}
               </div>
+            </div>
 
               <div>
                 <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Example usage</p>
@@ -227,7 +227,7 @@ export function SkillsMatrix() {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-slate-400" />
           <span>Deployed in production</span>
-        </div>
+          </div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-slate-700" />
           <span>Used in projects</span>

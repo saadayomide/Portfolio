@@ -187,8 +187,8 @@ const projectData = {
   tags: ["Python", "ML", "LightGBM", "SHAP", "OULAD", "Fairness"],
   links: {
     github: "https://github.com/saadayomide/dropout-prediction",
-    demo: null,
-    readme: null,
+    demo: undefined,
+    readme: undefined,
   },
 };
 

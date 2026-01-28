@@ -15,11 +15,11 @@ const projectNames: Record<string, string> = {
 
 export function Breadcrumbs() {
   const pathname = usePathname();
-
+  
   if (pathname === "/") return null;
 
   const segments = pathname.split("/").filter(Boolean);
-
+  
   const breadcrumbItems = [
     { href: "/", label: "Home", isHome: true },
     ...segments.map((segment, index) => {
@@ -47,14 +47,14 @@ export function Breadcrumbs() {
                 <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
               )}
               {item.isHome ? (
-                <Link
-                  href={item.href}
+              <Link
+                href={item.href}
                   className="text-slate-500 hover:text-accent transition-colors p-1 rounded"
                   aria-label="Home"
-                >
+              >
                   <Home className="w-3.5 h-3.5" />
-                </Link>
-              ) : (
+              </Link>
+            ) : (
                 <Link
                   href={item.href}
                   className={`transition-colors px-1.5 py-0.5 rounded ${
@@ -66,8 +66,8 @@ export function Breadcrumbs() {
                 >
                   {item.label}
                 </Link>
-              )}
-            </div>
+            )}
+          </div>
           );
         })}
       </nav>

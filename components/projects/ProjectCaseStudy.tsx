@@ -125,11 +125,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
       <Section title="Outcome" delay={0.15}>
         <div className="rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.06] p-6 space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div>
+          <div>
               <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">MVP Status</p>
               <p className="text-slate-200">{project.outcome.mvp}</p>
-            </div>
-            <div>
+          </div>
+          <div>
               <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Deployed</p>
               <p className="text-slate-200">{project.outcome.deployed}</p>
             </div>
@@ -317,7 +317,7 @@ function DecisionCard({
       transition={{ delay: index * 0.1 }}
       className="rounded-xl bg-white/[0.02] border border-white/[0.06] overflow-hidden hover:border-white/[0.1] transition-colors"
     >
-      <button
+          <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full p-5 text-left flex items-center justify-between gap-4"
       >
@@ -354,16 +354,16 @@ function DecisionCard({
                         <span key={alt} className="px-2.5 py-1 rounded-md text-xs bg-white/[0.03] border border-white/[0.06] text-slate-400">
                           {alt}
                         </span>
-                      ))}
-                    </div>
+        ))}
+      </div>
                   </div>
                   <div>
                     <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Failure Modes</p>
                     <p className="text-sm text-slate-400">{decision.failureModes}</p>
-                  </div>
+      </div>
                 </>
               )}
-            </div>
+    </div>
           </motion.div>
         )}
       </AnimatePresence>

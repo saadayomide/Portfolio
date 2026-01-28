@@ -63,7 +63,7 @@ export function Pillars() {
 
           return (
             <motion.div
-              key={pillar.title}
+            key={pillar.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -87,7 +87,7 @@ export function Pillars() {
 
                 <div className="relative p-6 space-y-4">
                   {/* Icon */}
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${pillar.color}12` }}
                   >

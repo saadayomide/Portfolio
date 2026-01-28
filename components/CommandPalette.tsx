@@ -51,15 +51,15 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     return commands.filter((cmd) =>
       cmd.label.toLowerCase().includes(lower) ||
       cmd.keywords?.some(k => k.includes(lower))
-    );
+  );
   }, [query]);
 
   const groupedCommands = useMemo(() => {
     return filteredCommands.reduce((acc, cmd) => {
-      if (!acc[cmd.category]) acc[cmd.category] = [];
-      acc[cmd.category].push(cmd);
-      return acc;
-    }, {} as Record<string, CommandItem[]>);
+    if (!acc[cmd.category]) acc[cmd.category] = [];
+    acc[cmd.category].push(cmd);
+    return acc;
+  }, {} as Record<string, CommandItem[]>);
   }, [filteredCommands]);
 
   const categoryOrder = ["Pages", "Projects", "Skills"];
@@ -79,7 +79,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
 
   useEffect(() => {
     if (!isOpen) return;
-
+    
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
@@ -115,7 +115,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
             className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
-            onClick={onClose}
+      onClick={onClose}
           />
 
           <motion.div
@@ -129,44 +129,44 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
               {/* Search Input */}
               <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.04]">
                 <Search className="w-5 h-5 text-slate-500" />
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={query}
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search pages, projects, skills..."
+            placeholder="Search pages, projects, skills..."
                   className="flex-1 bg-transparent outline-none text-white placeholder:text-slate-500 text-base"
-                />
+          />
                 <kbd className="hidden sm:block text-[10px] px-2 py-1 rounded bg-white/[0.06] text-slate-500 font-mono">
-                  ESC
-                </kbd>
-              </div>
+            ESC
+          </kbd>
+        </div>
 
               {/* Results */}
               <div ref={listRef} className="max-h-[50vh] overflow-y-auto p-2">
                 {sortedCategories.map((category) => (
                   <div key={category} className="mb-2">
                     <div className="px-3 py-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
-                      {category}
-                    </div>
+                {category}
+              </div>
                     {groupedCommands[category].map((cmd) => {
-                      const globalIndex = filteredCommands.indexOf(cmd);
+                const globalIndex = filteredCommands.indexOf(cmd);
                       const isSelected = globalIndex === selectedIndex;
-                      return (
-                        <button
-                          key={cmd.id}
+                return (
+                  <button
+                    key={cmd.id}
                           data-index={globalIndex}
-                          onClick={() => {
-                            router.push(cmd.href);
-                            onClose();
-                          }}
-                          className={cn(
+                    onClick={() => {
+                      router.push(cmd.href);
+                      onClose();
+                    }}
+                    className={cn(
                             "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                             isSelected
                               ? "bg-accent/10 text-accent"
                               : "text-slate-300 hover:bg-white/[0.04]"
-                          )}
-                        >
+                    )}
+                  >
                           <span className={cn(
                             "transition-colors",
                             isSelected ? "text-accent" : "text-slate-500"
@@ -177,17 +177,17 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                           {isSelected && (
                             <ArrowRight className="w-4 h-4 text-accent" />
                           )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                ))}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
 
-                {filteredCommands.length === 0 && (
+          {filteredCommands.length === 0 && (
                   <div className="px-4 py-12 text-center">
-                    <p className="text-slate-500 text-sm">No results for "{query}"</p>
-                  </div>
-                )}
+                    <p className="text-slate-500 text-sm">No results for &quot;{query}&quot;</p>
+            </div>
+          )}
               </div>
 
               {/* Footer */}
@@ -201,9 +201,9 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                     <CornerDownLeft className="w-3 h-3" />
                     Select
                   </span>
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+    </div>
           </motion.div>
         </>
       )}

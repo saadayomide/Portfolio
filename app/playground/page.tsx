@@ -27,7 +27,7 @@ export default function PlaygroundPage() {
           Playground & <span className="text-gradient">Experiments</span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          Hands-on demonstrations of concepts and patterns I've learned. 
+          Hands-on demonstrations of concepts and patterns I&apos;ve learned. 
           Explore and interact to understand how things work under the hood.
         </p>
       </section>

@@ -54,18 +54,18 @@ export function ComplexityToggle() {
           exit={{ rotate: 90, opacity: 0 }}
           transition={{ duration: 0.15 }}
           className="flex items-center gap-3"
-        >
-          {mode === "recruiter" ? (
-            <>
-              <User className="w-4 h-4" />
-              <span>Recruiter View</span>
-            </>
-          ) : (
-            <>
-              <Code className="w-4 h-4" />
-              <span>Engineer View</span>
-            </>
-          )}
+    >
+      {mode === "recruiter" ? (
+        <>
+          <User className="w-4 h-4" />
+          <span>Recruiter View</span>
+        </>
+      ) : (
+        <>
+          <Code className="w-4 h-4" />
+          <span>Engineer View</span>
+        </>
+      )}
         </motion.div>
       </AnimatePresence>
       

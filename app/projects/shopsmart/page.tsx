@@ -177,8 +177,8 @@ const projectData = {
   tags: ["FastAPI", "Azure", "Web Scraping", "SQLAlchemy", "PostgreSQL"],
   links: {
     github: "https://github.com/saadayomide/shopsmart",
-    demo: null,
-    readme: null,
+    demo: undefined,
+    readme: undefined,
   },
 };
 

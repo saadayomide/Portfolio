@@ -22,7 +22,7 @@ export function ProofStrip() {
             const Icon = proof.icon;
             return (
               <motion.div
-                key={index}
+            key={index}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -42,7 +42,7 @@ export function ProofStrip() {
               </motion.div>
             );
           })}
-        </div>
+          </div>
       </div>
     </section>
   );

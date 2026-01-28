@@ -137,13 +137,13 @@ export function SkillEvidenceGallery() {
           const Icon = item.icon;
           return (
             <motion.button
-              key={index}
+            key={index}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4 }}
-              onClick={() => setSelectedEvidence(index)}
+            onClick={() => setSelectedEvidence(index)}
               className="group relative text-left rounded-2xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06] p-5 hover:border-white/[0.12] transition-all"
             >
               <div 
@@ -162,7 +162,7 @@ export function SkillEvidenceGallery() {
                   <h3 className="font-heading font-semibold text-white">{item.title}</h3>
                   <p className="text-sm text-slate-400 mt-1 line-clamp-2">{item.description}</p>
                 </div>
-              </div>
+            </div>
             </motion.button>
           );
         })}
@@ -170,21 +170,21 @@ export function SkillEvidenceGallery() {
 
       {/* Evidence Modal */}
       <AnimatePresence>
-        {selectedEvidence !== null && (
+      {selectedEvidence !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-            onClick={() => setSelectedEvidence(null)}
-          >
+          onClick={() => setSelectedEvidence(null)}
+        >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
               className="bg-surface-1 border border-white/[0.08] rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
+            onClick={(e) => e.stopPropagation()}
+          >
               <div className="flex items-center justify-between p-5 border-b border-white/[0.06]">
                 <div className="flex items-center gap-3">
                   {(() => {
@@ -203,21 +203,21 @@ export function SkillEvidenceGallery() {
                     <p className="text-xs text-slate-500">{evidence[selectedEvidence].description}</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setSelectedEvidence(null)}
+              <button
+                onClick={() => setSelectedEvidence(null)}
                   className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors"
-                >
+              >
                   <X className="w-4 h-4" />
-                </button>
-              </div>
+              </button>
+            </div>
               <div className="p-5 overflow-y-auto max-h-[60vh]">
                 <pre className="font-mono text-sm text-slate-300 leading-relaxed whitespace-pre-wrap bg-white/[0.02] rounded-xl p-5 border border-white/[0.04]">
                   {evidence[selectedEvidence].content}
                 </pre>
-              </div>
+            </div>
             </motion.div>
           </motion.div>
-        )}
+      )}
       </AnimatePresence>
     </section>
   );

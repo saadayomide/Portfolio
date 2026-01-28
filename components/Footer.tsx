@@ -39,13 +39,13 @@ export function Footer() {
                   <motion.a
                     key={link.href}
                     href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.1] transition-all"
                     aria-label={link.label}
-                  >
+            >
                     <Icon className="w-4 h-4 text-slate-400" />
                   </motion.a>
                 );
@@ -72,7 +72,7 @@ export function Footer() {
           {/* Contact */}
           <div className="md:col-span-4">
             <h4 className="text-sm font-medium text-slate-300 mb-4">Get in touch</h4>
-            <a 
+            <a
               href="mailto:solowolayemo.ieu2023@student.ie.edu"
               className="group flex items-center gap-2 text-sm text-slate-500 hover:text-accent transition-colors"
             >

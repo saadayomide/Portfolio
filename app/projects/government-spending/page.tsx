@@ -187,8 +187,8 @@ const projectData = {
   tags: ["FastAPI", "PostgreSQL", "React", "Azure", "CI/CD", "Testing"],
   links: {
     github: "https://github.com/saadayomide/government-spending",
-    demo: null,
-    readme: null,
+    demo: undefined,
+    readme: undefined,
   },
 };
 

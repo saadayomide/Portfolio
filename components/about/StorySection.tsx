@@ -46,50 +46,50 @@ export function StorySection() {
         
         <div className="space-y-4 text-slate-400 leading-relaxed">
           <p>
-            I'm a Computer Science & AI student at IE University, passionate about
-            building practical systems that solve real problems. My work sits at
+          I&apos;m a Computer Science &amp; AI student at IE University, passionate about
+          building practical systems that solve real problems. My work sits at
             the intersection of software engineering and applied machine learning.
-          </p>
+        </p>
           <p>
-            Through projects like ShopSmart, Government Spending Tracker, and
-            Student Dropout Prediction, I've gained hands-on experience with
-            modern development workflows, data-driven system design, and writing
+          Through projects like ShopSmart, Government Spending Tracker, and
+          Student Dropout Prediction, I&apos;ve gained hands-on experience with
+          modern development workflows, data-driven system design, and writing
             clean, testable code.
           </p>
           <p>
-            I'm eager to contribute in fast-paced, collaborative environments where I can 
+            I&apos;m eager to contribute in fast-paced, collaborative environments where I can 
             keep learning and help deliver impactful products.
-          </p>
+        </p>
         </div>
 
         <div className="space-y-4">
           <p className="text-sm text-slate-500">Core values I code by:</p>
           <div className="flex flex-wrap gap-2">
-            {values.map((value, index) => (
+          {values.map((value, index) => (
               <motion.button
-                key={value.label}
+              key={value.label}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setSelectedValue(selectedValue === index ? null : index)}
-                className={cn(
+              onClick={() => setSelectedValue(selectedValue === index ? null : index)}
+              className={cn(
                   "px-4 py-2.5 rounded-lg text-sm font-medium transition-all border",
                   selectedValue === index
                     ? "bg-opacity-15 border-opacity-30"
                     : "bg-white/[0.03] border-white/[0.06] text-slate-300 hover:bg-white/[0.06]"
-                )}
+              )}
                 style={selectedValue === index ? {
                   backgroundColor: `${value.color}15`,
                   borderColor: `${value.color}30`,
                   color: value.color
                 } : {}}
-              >
-                {value.label}
+            >
+              {value.label}
               </motion.button>
-            ))}
-          </div>
+          ))}
+        </div>
           
           <AnimatePresence>
-            {selectedValue !== null && (
+        {selectedValue !== null && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
@@ -104,12 +104,12 @@ export function StorySection() {
                     borderColor: `${values[selectedValue].color}15`
                   }}
                 >
-                  <p className="text-sm text-slate-300">{values[selectedValue].description}</p>
-                </div>
+            <p className="text-sm text-slate-300">{values[selectedValue].description}</p>
+          </div>
               </motion.div>
-            )}
+        )}
           </AnimatePresence>
-        </div>
+      </div>
       </motion.div>
 
       <motion.div
@@ -141,7 +141,7 @@ export function StorySection() {
               <div className="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center flex-shrink-0">
                 <Target className="w-5 h-5 text-violet-400" />
               </div>
-              <div>
+            <div>
                 <p className="text-xs text-slate-500 mb-0.5">Primary focus</p>
                 <p className="font-medium text-white">Software Engineering + AI/ML</p>
               </div>
@@ -150,8 +150,8 @@ export function StorySection() {
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
                 <Briefcase className="w-5 h-5 text-emerald-400" />
-              </div>
-              <div>
+          </div>
+            <div>
                 <p className="text-xs text-slate-500 mb-0.5">Looking for</p>
                 <p className="font-medium text-white">Computer Science Internship</p>
                 <p className="text-sm text-slate-400 mt-1">

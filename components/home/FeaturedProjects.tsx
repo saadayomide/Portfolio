@@ -84,8 +84,8 @@ export function FeaturedProjects() {
                 {/* Header with metric */}
                 <div className="flex items-start justify-between">
                   <h3 className="text-xl font-heading font-semibold group-hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
+              {project.title}
+            </h3>
                   <span 
                     className="px-2.5 py-1 rounded-full text-[11px] font-medium"
                     style={{ 
@@ -99,28 +99,28 @@ export function FeaturedProjects() {
 
                 {/* Description */}
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  {project.impact}
-                </p>
+              {project.impact}
+            </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
                       className="px-2.5 py-1 rounded-md text-xs text-slate-500 bg-white/[0.03] border border-white/[0.04]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
                 {/* CTA */}
                 <div className="flex items-center gap-2 pt-2 text-sm font-medium" style={{ color: project.accent }}>
                   <span>View case study</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
-            </Link>
+            </div>
+          </Link>
           </motion.div>
         ))}
       </div>

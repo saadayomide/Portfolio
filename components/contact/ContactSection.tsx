@@ -76,11 +76,11 @@ export function ContactSection() {
           <span className="text-sm font-medium text-accent">Open to opportunities</span>
         </motion.div>
         <h1 className="text-4xl md:text-5xl font-heading font-bold">
-          Let's build something <span className="text-gradient">together</span>.
+          Let&apos;s build something <span className="text-gradient">together</span>.
         </h1>
         <p className="text-lg text-slate-400 max-w-xl mx-auto">
-          I'm actively looking for internship opportunities in software engineering, 
-          AI/ML, or backend development. Let's connect!
+          I&apos;m actively looking for internship opportunities in software engineering, 
+          AI/ML, or backend development. Let&apos;s connect!
         </p>
       </motion.div>
 
@@ -156,7 +156,7 @@ export function ContactSection() {
                 <CheckCircle className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-xl font-heading font-semibold text-white mb-2">Message sent!</h3>
-              <p className="text-slate-400">Thanks for reaching out. I'll get back to you soon.</p>
+              <p className="text-slate-400">Thanks for reaching out. I&apos;ll get back to you soon.</p>
             </motion.div>
           ) : (
             <motion.form

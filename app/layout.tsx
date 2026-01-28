@@ -29,11 +29,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen">
         <ComplexityProvider>
-          <Header />
+        <Header />
           <main className="min-h-screen">
             {children}
           </main>
-          <Footer />
+        <Footer />
         </ComplexityProvider>
       </body>
     </html>

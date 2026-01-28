@@ -89,17 +89,17 @@ export function Header() {
                 const isActive = pathname === item.href || 
                   (item.href !== "/" && pathname.startsWith(item.href));
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
+                <Link
+                  key={item.href}
+                  href={item.href}
                     className={cn(
                       "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                       isActive 
                         ? "text-white" 
                         : "text-slate-400 hover:text-white hover:bg-white/[0.03]"
                     )}
-                  >
-                    {item.label}
+                >
+                  {item.label}
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
@@ -108,7 +108,7 @@ export function Header() {
                         transition={{ type: "spring", stiffness: 400, damping: 30 }}
                       />
                     )}
-                  </Link>
+                </Link>
                 );
               })}
             </nav>
@@ -131,7 +131,7 @@ export function Header() {
                 className="md:hidden p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] transition-colors"
               >
                 <AnimatePresence mode="wait">
-                  {isMobileMenuOpen ? (
+                {isMobileMenuOpen ? (
                     <motion.div
                       key="close"
                       initial={{ rotate: -90, opacity: 0 }}
@@ -139,9 +139,9 @@ export function Header() {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.15 }}
                     >
-                      <X className="w-5 h-5" />
+                  <X className="w-5 h-5" />
                     </motion.div>
-                  ) : (
+                ) : (
                     <motion.div
                       key="menu"
                       initial={{ rotate: 90, opacity: 0 }}
@@ -149,9 +149,9 @@ export function Header() {
                       exit={{ rotate: -90, opacity: 0 }}
                       transition={{ duration: 0.15 }}
                     >
-                      <Menu className="w-5 h-5" />
+                  <Menu className="w-5 h-5" />
                     </motion.div>
-                  )}
+                )}
                 </AnimatePresence>
               </button>
             </div>
@@ -159,7 +159,7 @@ export function Header() {
 
           {/* Mobile Menu */}
           <AnimatePresence>
-            {isMobileMenuOpen && (
+          {isMobileMenuOpen && (
               <motion.nav
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
@@ -177,17 +177,17 @@ export function Header() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        <Link
-                          href={item.href}
+                  <Link
+                    href={item.href}
                           className={cn(
                             "block px-4 py-3 rounded-lg transition-colors",
                             isActive
                               ? "bg-accent/10 text-accent"
                               : "text-slate-300 hover:bg-white/[0.03]"
                           )}
-                        >
-                          {item.label}
-                        </Link>
+                  >
+                    {item.label}
+                  </Link>
                       </motion.div>
                     );
                   })}
@@ -196,23 +196,23 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: navItems.length * 0.05 }}
                   >
-                    <button
-                      onClick={() => {
-                        setIsCommandOpen(true);
-                        setIsMobileMenuOpen(false);
-                      }}
+                <button
+                  onClick={() => {
+                    setIsCommandOpen(true);
+                    setIsMobileMenuOpen(false);
+                  }}
                       className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/[0.03] transition-colors"
-                    >
-                      <Search className="w-4 h-4" />
+                >
+                  <Search className="w-4 h-4" />
                       Search
                       <kbd className="ml-auto text-xs px-2 py-0.5 rounded bg-white/[0.06] text-slate-500">
                         ⌘K
                       </kbd>
-                    </button>
+                </button>
                   </motion.div>
-                </div>
+              </div>
               </motion.nav>
-            )}
+          )}
           </AnimatePresence>
         </div>
 

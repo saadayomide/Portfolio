@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           Projects & <span className="text-gradient">Case Studies</span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          End-to-end systems I've built, from concept to deployment. Each project includes 
+          End-to-end systems I&apos;ve built, from concept to deployment. Each project includes 
           detailed technical breakdowns and lessons learned.
         </p>
       </section>

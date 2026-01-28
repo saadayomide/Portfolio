@@ -28,8 +28,8 @@ export default function SkillsPage() {
           Skills & <span className="text-gradient">Expertise</span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          Technologies I've worked with across production systems, personal projects, 
-          and continuous learning. Click any skill to see where I've applied it.
+          Technologies I&apos;ve worked with across production systems, personal projects, 
+          and continuous learning. Click any skill to see where I&apos;ve applied it.
         </p>
       </section>
 

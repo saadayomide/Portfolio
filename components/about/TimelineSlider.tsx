@@ -118,7 +118,7 @@ export function TimelineSlider() {
               className="relative group"
             >
               <div
-                className={cn(
+              className={cn(
                   "w-3 h-3 rounded-full transition-all",
                   index <= activeIndex ? "bg-accent" : "bg-white/20"
                 )}
@@ -147,9 +147,9 @@ export function TimelineSlider() {
               "flex-shrink-0 w-72 snap-center rounded-2xl overflow-hidden transition-all duration-300",
               "bg-gradient-to-b from-white/[0.04] to-transparent border",
               index === activeIndex ? "border-white/[0.15]" : "border-white/[0.06]"
-            )}
+              )}
             style={index === activeIndex ? { borderColor: `${milestone.color}40` } : {}}
-          >
+            >
             <div className="p-6 space-y-4">
               <div className="flex items-center gap-2 text-xs text-slate-500">
                 <Calendar className="w-3 h-3" />
@@ -170,24 +170,24 @@ export function TimelineSlider() {
               )}
             </div>
           </motion.div>
-        ))}
-      </div>
+          ))}
+        </div>
 
       {/* Dots */}
       <div className="flex justify-center gap-1.5">
         {milestones.map((milestone, index) => (
-          <button
-            key={index}
+            <button
+              key={index}
             onClick={() => scrollToIndex(index)}
-            className={cn(
+              className={cn(
               "h-1.5 rounded-full transition-all",
               index === activeIndex 
                 ? "w-6" 
                 : "w-1.5 bg-white/20 hover:bg-white/40"
-            )}
+              )}
             style={index === activeIndex ? { backgroundColor: milestone.color } : {}}
-          />
-        ))}
+            />
+          ))}
       </div>
     </motion.section>
   );

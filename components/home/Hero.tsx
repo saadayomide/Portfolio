@@ -51,7 +51,7 @@ export function Hero() {
             <div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold">
                 Saad Ayomide <span className="text-accent">Olowolayemo</span>
-              </h1>
+        </h1>
               <p className="text-slate-400 mt-1">Software & AI/ML Engineer</p>
             </div>
           </motion.div>

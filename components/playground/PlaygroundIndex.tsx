@@ -53,17 +53,17 @@ export function PlaygroundIndex() {
         animate={{ opacity: 1, y: 0 }}
       >
         <p className="text-slate-400 max-w-2xl">
-          Interactive demonstrations of concepts and patterns I've learned while building projects. 
+          Interactive demonstrations of concepts and patterns I&apos;ve learned while building projects. 
           Each demo is designed to teach through exploration.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+    <div className="grid md:grid-cols-2 gap-6">
         {demos.map((demo, index) => {
           const Icon = demo.icon;
           return (
             <motion.div
-              key={demo.title}
+          key={demo.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -91,20 +91,20 @@ export function PlaygroundIndex() {
                   )}
                 </div>
 
-                <div>
+          <div>
                   <h3 className="text-xl font-heading font-semibold text-white">{demo.title}</h3>
                   <p className="text-sm text-slate-400 mt-1">{demo.description}</p>
-                </div>
+          </div>
 
-                <div className="space-y-2 text-sm">
-                  <div>
+          <div className="space-y-2 text-sm">
+            <div>
                     <span className="text-slate-500">Demonstrates: </span>
-                    <span className="text-slate-300">{demo.whatItShows}</span>
-                  </div>
-                </div>
+              <span className="text-slate-300">{demo.whatItShows}</span>
+            </div>
+            </div>
 
-                <button
-                  onClick={() => setSelectedDemo(index)}
+          <button
+            onClick={() => setSelectedDemo(index)}
                   disabled={demo.status === "coming-soon"}
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
@@ -116,8 +116,8 @@ export function PlaygroundIndex() {
                 >
                   <Play className="w-4 h-4" />
                   {demo.status === "coming-soon" ? "Coming Soon" : "Open Demo"}
-                </button>
-              </div>
+          </button>
+        </div>
             </motion.div>
           );
         })}
@@ -125,7 +125,7 @@ export function PlaygroundIndex() {
 
       {/* Demo Modal */}
       <AnimatePresence>
-        {selectedDemo !== null && (
+      {selectedDemo !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -158,13 +158,13 @@ export function PlaygroundIndex() {
                     <p className="text-xs text-slate-500">{demos[selectedDemo].description}</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setSelectedDemo(null)}
+              <button
+                onClick={() => setSelectedDemo(null)}
                   className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] transition-colors"
-                >
+              >
                   <X className="w-4 h-4" />
-                </button>
-              </div>
+              </button>
+            </div>
               
               <div className="p-6 space-y-6">
                 <div className="aspect-video rounded-xl bg-white/[0.02] border border-dashed border-white/[0.1] flex items-center justify-center">
@@ -172,16 +172,16 @@ export function PlaygroundIndex() {
                     <Play className="w-12 h-12 mx-auto mb-4 text-slate-600" />
                     <p className="text-slate-500">Interactive demo will be embedded here</p>
                   </div>
-                </div>
+            </div>
                 
                 <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-4">
                   <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">What I learned</p>
                   <p className="text-sm text-slate-300">{demos[selectedDemo].learned}</p>
-                </div>
-              </div>
+            </div>
+          </div>
             </motion.div>
           </motion.div>
-        )}
+      )}
       </AnimatePresence>
     </div>
   );
